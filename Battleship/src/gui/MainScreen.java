@@ -5,16 +5,12 @@
  */
 package gui;
 
+import entity.ClientHandler;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import message.ClientMessage;
-//import java.io.File;
-//import javax.sound.sampled.AudioInputStream;
-//import javax.sound.sampled.AudioSystem;
-//import javax.sound.sampled.Clip;
-//import sun.applet.Main;
 
 /**
  *
@@ -49,7 +45,7 @@ public class MainScreen extends javax.swing.JFrame {
         this.add(playBoard);
         playBoard.setLocation(570, 0);
         playBoard.setSize(560, 560);
-        eneHP = 12;
+        eneHP = ClientHandler.healthpoint(oppositeMatrix);
         playBoard.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -81,24 +77,6 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
     }
-
-//    public static synchronized void playSound(final String url) {
-//        new Thread(new Runnable() {
-//            // The wrapper thread is unnecessary, unless it blocks on the
-//            // Clip finishing; see comments.
-//            public void run() {
-//                try {
-//                    Clip clip = AudioSystem.getClip();
-//                    AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-//                            Main.class.getResourceAsStream("/path/to/sounds/" + url));
-//                    clip.open(inputStream);
-//                    clip.start();
-//                } catch (Exception e) {
-//                    System.err.println(e.getMessage());
-//                }
-//            }
-//        }).start();
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

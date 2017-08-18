@@ -98,16 +98,6 @@ public class PlayBoard extends javax.swing.JPanel {
         return null;
     }
 
-//    @Override
-//    public void paint(Graphics g) {
-//        g.setColor(Color.RED);
-//        g.drawLine(0, 0, 200, 200);
-//    }
-//    @Override
-//    public void paintComponents(Graphics g) {
-//        super.paintComponents(g); //To change body of generated methods, choose Tools | Templates.
-//        g.drawLine(0, 0, 200, 200);
-//    }
     public void paintSquare(int row, int col, Color c) {
         square[row][col].setBackground(c);
     }

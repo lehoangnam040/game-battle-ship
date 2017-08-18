@@ -43,9 +43,7 @@ public class MyServer {
             System.out.println("Server starting........!");
             while (true) {
                 try {
-                    
                     Socket socket = server.accept();
-                    System.out.println("new socket");
                     Client served = new Client(socket);
                     ClientHandler handler = new ClientHandler(served);
                     handler.start();
@@ -74,7 +72,6 @@ public class MyServer {
                     ServerMessage serverMess = new ServerMessage();
                     switch (clientMess.command) {
                         case ClientMessage.LOGIN:
-                            System.out.println("new player login");
                             served.matrix = clientMess.matrix;
                             clients.add(served);
                             if (clients.size() % 2 == 0) { //2 player to play

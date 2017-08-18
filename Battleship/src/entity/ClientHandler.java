@@ -39,7 +39,7 @@ public class ClientHandler {
                 mainScreen = new MainScreen(createScreen);
                 mainScreen.setVisible(true);
                 socket = new Socket("localhost", 9999);
-                //thay localhost = ip cua may phat server vd: 192.168.43.240
+                //replace localhost = ip of server computer. for example: 192.168.43.240
                 ServerConnecter connecter = new ServerConnecter();
                 connecter.start();
                 ClientMessage clientMess = new ClientMessage();
@@ -84,7 +84,7 @@ public class ClientHandler {
                     switch (serverMess.command) {
                         case ServerMessage.LOGIN_SUCCESS:
                             mainScreen.setEnemy(serverMess.matrix);
-                            hp = 12;
+                            hp = healthpoint(createScreen.coordinates);
                             mainScreen.myHP.setText(hp + "");
                             mainScreen.enemyHP.setText(mainScreen.eneHP + "");
                             mainScreen.turn = serverMess.yourTurn;
@@ -121,5 +121,19 @@ public class ClientHandler {
             }
         }
 
+    }
+
+    public static int healthpoint(int[][] matrix) {
+        int hp = 0;
+        int row = matrix.length;
+        int col = matrix[0].length;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (matrix[i][j] > 0) {
+                    hp += matrix[i][j];
+                }
+            }
+        }
+        return hp;
     }
 }

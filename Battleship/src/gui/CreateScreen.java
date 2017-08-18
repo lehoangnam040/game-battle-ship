@@ -59,33 +59,6 @@ public class CreateScreen extends javax.swing.JFrame {
         board.setSize(new Dimension(560, 560));
     }
 
-    //                try {
-//                    BufferedImage r = new BufferedImage(ships[0].label.getWidth(), ships[0].label.getHeight(), 1);
-//                    Image img = ImageIO.read(new File("E:\\nam\\java\\Assignment\\Battleship\\image\\AirCraftCarrier_Horizontal.png"));
-//                    Graphics2D g2d = (Graphics2D) r.getGraphics();
-////                    g2d.transform(AffineTransform.getQuadrantRotateInstance(1));
-////                    g2d.translate(0, -getSize().getWidth());
-//                    g2d.rotate(Math.toRadians(90));
-//                    g2d.drawImage(img, 0, -ships[0].label.getWidth(), ships[0].label);
-//                    ships[0].label.setIcon(new ImageIcon(r));
-//                } catch (IOException ex) {
-//                    Logger.getLogger(CreateScreen.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//                ships[0].label.setIcon(
-//                        setImg("E:\\nam\\java\\Assignment\\Battleship\\image\\AirCraftCarrier_Vertical.png", ships[0].label));
-//                try {
-//                    Robot robot = new Robot();
-//                    robot.mousePress(InputEvent.BUTTON3_DOWN_MASK);
-//                    robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
-//
-//                } catch (AWTException ex) {
-//                    Logger.getLogger(CreateScreen.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//                System.out.println(ships[0].label.getX() + " " + ships[0].label.getY());
-//            } else {
-//                ships[0].label.setIcon(
-//                        setImg("E:\\nam\\java\\Assignment\\Battleship\\image\\AirCraftCarrier_Horizontal.png", ships[0].label));
-//            }
     public void setLabel(Ship ship, int x, int y, int w, int h, String img) {
         ship.label = new JLabel();
         ship.label.setSize(w, h);
@@ -224,13 +197,6 @@ public class CreateScreen extends javax.swing.JFrame {
     int y;
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-//        for (int i = 0; i < coordinates.length; i++) {    //test
-//            for (int j = 0; j < coordinates[0].length; j++) {
-//                System.out.print(coordinates[i][j] + " ");
-//            }
-//            System.out.println("");
-//        }
-//        System.out.println("");
         handler = new ClientHandler();
         handler.login(this);
     }//GEN-LAST:event_btnLoginActionPerformed
